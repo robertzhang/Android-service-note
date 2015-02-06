@@ -18,7 +18,8 @@ Android Service分为系统服务和应用程序服务。系统服务指的是�
 
 ## Remote Service（远端服务）
 
-远端服务因为在单独的进程中，所以要和activity进行交互就必须要提到IPC机制。我们都知道IPC能使用，就需要AIDL的知识。AIDL就是Android Interface Definition Language，用于约束两个进程间的通信规则。我们在设计远端服务的时候，只需要编写好以.aidl为后缀的接口文件，Android SDK会帮我们自动在gen目录下生成对应的.java文件。
+远端服务因为在单独的进程中，所以要和activity进行交互就必须要提到IPC机制。我们都知道IPC能使用，就需要AIDL的知识。AIDL就是Android Interface Definition Language，用于约束两个进程间的通信规则。我们在设计远端服务的时候，只需要编写好以.aidl为后缀的接口文件，Android SDK会帮我们自动在gen目录下生成对应的.java文件。这个部分的java文件不用我们过多的关注。
+做好这些事情，接下来就是编写IService.stub这个类。这个类主要做的事情就是实现我们在.aidl中定义的接口方法。
 
 
 
